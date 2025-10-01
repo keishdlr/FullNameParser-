@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class FullNameParser {
 
+    // scanner that reads user input
     public static Scanner nameParse = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class FullNameParser {
 
         if (format.equalsIgnoreCase("with middle")){ // if with middle was chosen run this
             System.out.println("You chose a format with a middle name");
-            System.out.println("Enter your name"); // ask user to input their name
+            System.out.print("Enter your name"); // ask user to input their name
             String fullName = nameParse.nextLine().trim(); // holds user name
 
             String[] withMiddle = fullName.split(Pattern.quote(" ")); // turn their name into an array. item in array is separated by a 'space'
@@ -22,16 +23,18 @@ public class FullNameParser {
             System.out.println("Middle Name: " + withMiddle[1]);  // output of their name assigning each array item to a line
             System.out.println("Last Name: " + withMiddle[2]);
         }
-        else {                                                      // if without middle was chosen run this
+        else if (format.equalsIgnoreCase("Without middle name")){   // if without middle was chosen run this
             System.out.println("You chose a format without a middle name");
-            System.out.println(" Enter your name"); // ask user for their name
+            System.out.print(" Enter your name"); // ask user for their name
             String fullName = nameParse.nextLine().trim(); // holds user name
 
             String[] woMiddle = fullName.split(Pattern.quote(" ")); // turn that name into an array
             System.out.println("First Name: " + woMiddle[0]);
-            System.out.println("Last Name: " + woMiddle[1]);  // output their name, assigning an item per line
+            System.out.println("Last Name: " + woMiddle[1]);  // output their name, assigning an item from the array per line
 
         }
+         else {
+        System.out.println("Invalid Input");
     }
 
-}
+}}
