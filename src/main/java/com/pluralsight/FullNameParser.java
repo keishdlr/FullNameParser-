@@ -14,15 +14,17 @@ public class FullNameParser {
 
         if (format.equalsIgnoreCase("with middle")){
             System.out.println("You chose a format with a middle name");
+            System.out.println("Enter your name");
             String fullName = nameParse.nextLine().trim();
 
             String[] withMiddle = fullName.split(Pattern.quote(" "));
-            System.out.print(" First Name: " + withMiddle[0]);
+            System.out.println("First Name: " + withMiddle[0]);
             System.out.println("Middle Name: " + withMiddle[1]);
             System.out.println("Last Name: " + withMiddle[2]);
         }
         else {
             System.out.println("You chose a format without a middle name");
+            System.out.println(" Enter your name");
             String fullName = nameParse.nextLine().trim();
 
             String[] woMiddle = fullName.split(Pattern.quote(" "));
